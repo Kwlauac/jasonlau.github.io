@@ -5,69 +5,356 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason Lau | AI Project Manager & Senior Engineer</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-blue: #0f172a;
-            --accent-blue: #2563eb;
+            --accent-blue: #3b82f6;
+            --secondary-blue: #60a5fa;
             --bg-light: #f8fafc;
-            --text-main: #334155;
+            --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            --text-main: #1e293b;
             --text-light: #64748b;
             --white: #ffffff;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); line-height: 1.7; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-gradient); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
         
         /* Header Section */
-        header { background: linear-gradient(135deg, var(--primary-blue) 0%, #1e293b 100%); color: var(--white); padding: 5rem 2rem; text-align: center; }
-        header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        header h2 { font-size: 1.3rem; font-weight: 300; color: #cbd5e1; margin-bottom: 2rem; }
-        .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        .contact-links a { color: var(--white); text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s ease; }
-        .contact-links a:hover { color: #60a5fa; }
+        header { 
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e293b 100%); 
+            color: var(--white); 
+            padding: 6rem 2rem; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzI0MzU0IiBzdHJva2Utd2lkdGg9IjEiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnptMC0xOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnptMTgtMThjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6bTAtMThjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6Ii8+PC9nPjwvc3ZnPg==');
+            opacity: 0.1;
+            z-index: 1;
+        }
+        header .content {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 { 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            margin-bottom: 1rem; 
+            letter-spacing: -0.5px; 
+            line-height: 1.1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        header h2 { 
+            font-size: 1.4rem; 
+            font-weight: 300; 
+            color: #cbd5e1; 
+            margin-bottom: 2.5rem; 
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .contact-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 2rem; 
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .contact-links a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-size: 1.1rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 0.75rem; 
+            transition: var(--transition);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .contact-links a:hover { 
+            color: var(--white);
+            background: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        }
 
         /* Container & Sections */
-        .container { max-width: 1000px; margin: -2rem auto 2rem; padding: 0 1.5rem; position: relative; z-index: 10; }
-        section { background: var(--white); border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        h3.section-title { font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; display: flex; align-items: center; gap: 0.75rem; }
+        .container { 
+            max-width: 1000px; 
+            margin: -3rem auto 4rem; 
+            padding: 0 1.5rem; 
+            position: relative; 
+            z-index: 10; 
+        }
+        section { 
+            background: var(--white); 
+            border-radius: 16px; 
+            padding: 3rem; 
+            margin-bottom: 2.5rem; 
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--secondary-blue));
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        h3.section-title { 
+            font-size: 1.8rem; 
+            color: var(--primary-blue); 
+            margin-bottom: 2rem; 
+            padding-bottom: 1rem; 
+            border-bottom: 2px solid #e2e8f0; 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem;
+            font-weight: 700;
+        }
+        h3.section-title i {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+        }
         
         /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .skill-card { background: var(--bg-light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--accent-blue); }
-        .skill-card h4 { color: var(--primary-blue); margin-bottom: 0.8rem; font-size: 1.1rem; }
-        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tag { background: #e0e7ff; color: var(--accent-blue); font-size: 0.85rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 20px; }
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2rem; 
+        }
+        .skill-card { 
+            background: var(--bg-light); 
+            padding: 2rem; 
+            border-radius: 12px; 
+            border-left: 4px solid var(--accent-blue);
+            transition: var(--transition);
+            position: relative;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+        .skill-card h4 { 
+            color: var(--primary-blue); 
+            margin-bottom: 1.2rem; 
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .tags { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 0.75rem; 
+        }
+        .tag { 
+            background: #e0e7ff; 
+            color: var(--accent-blue); 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            padding: 0.4rem 1rem; 
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+        .tag:hover {
+            background: var(--accent-blue);
+            color: var(--white);
+            transform: scale(1.05);
+        }
 
         /* Experience Line */
-        .experience-item, .education-item { margin-bottom: 2rem; }
+        .experience-item, .education-item { 
+            margin-bottom: 3rem; 
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            bottom: -1.5rem;
+            width: 2px;
+            background: #e2e8f0;
+        }
+        .experience-item:last-child::before {
+            bottom: 0;
+        }
         .experience-item:last-child { margin-bottom: 0; }
-        .job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; }
-        .job-title { font-size: 1.2rem; font-weight: 700; color: var(--primary-blue); }
-        .job-company { font-size: 1rem; font-weight: 600; color: var(--accent-blue); margin-bottom: 0.5rem; }
-        .job-date { font-size: 0.9rem; color: var(--text-light); font-weight: 600; background: var(--bg-light); padding: 0.2rem 0.6rem; border-radius: 4px; }
-        ul.job-tasks { margin-left: 1.2rem; color: var(--text-main); }
-        ul.job-tasks li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0.5rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--accent-blue);
+        }
+        .job-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 1rem; 
+            flex-wrap: wrap; 
+            gap: 1rem;
+        }
+        .job-title { 
+            font-size: 1.3rem; 
+            font-weight: 700; 
+            color: var(--primary-blue); 
+        }
+        .job-company { 
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            color: var(--accent-blue); 
+            margin-bottom: 0.75rem; 
+        }
+        .job-date { 
+            font-size: 0.95rem; 
+            color: var(--text-light); 
+            font-weight: 600; 
+            background: var(--bg-light); 
+            padding: 0.3rem 0.8rem; 
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        ul.job-tasks { 
+            margin-left: 1.5rem; 
+            color: var(--text-main);
+        }
+        ul.job-tasks li { 
+            margin-bottom: 0.75rem; 
+            padding-left: 0.75rem;
+            position: relative;
+        }
+        ul.job-tasks li::before {
+            content: '•';
+            position: absolute;
+            left: -1rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
 
         /* Footer */
-        footer { text-align: center; padding: 2rem; color: var(--text-light); font-size: 0.9rem; }
+        footer { 
+            text-align: center; 
+            padding: 3rem 2rem; 
+            color: var(--text-light); 
+            font-size: 1rem;
+            background: var(--primary-blue);
+            color: #cbd5e1;
+            margin-top: 4rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .job-header { flex-direction: column; gap: 0.5rem; }
+            header {
+                padding: 4rem 1.5rem;
+            }
+            header h1 { 
+                font-size: 2.5rem; 
+            }
+            header h2 {
+                font-size: 1.2rem;
+            }
+            .contact-links {
+                gap: 1rem;
+            }
+            .contact-links a {
+                font-size: 1rem;
+                padding: 0.5rem 1.2rem;
+            }
+            .container {
+                margin: -2rem auto 3rem;
+                padding: 0 1rem;
+            }
+            section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            h3.section-title {
+                font-size: 1.5rem;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .experience-item, .education-item {
+                padding-left: 1.5rem;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus states */
+        a:focus, button:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Jason LAU, Ka Wun</h1>
-        <h2>AI Project Manager | Senior Software & Product Engineer | GenAI Specialist</h2>
-        <div class="contact-links">
-            <a href="mailto:kwlauac@gmail.com"><i class="fas fa-envelope"></i> kwlauac@gmail.com</a>
-            <a href="tel:+85296160431"><i class="fas fa-phone-alt"></i> +852 96160431</a>
-            <a href="https://linkedin.com/in/jasonlau" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        <div class="content">
+            <h1>Jason LAU, Ka Wun</h1>
+            <h2>Robotics Engineer | GenAI Engineer | Senior Software & Product Engineer | Embedded System Engineer</h2>
+            <div class="contact-links">
+                <a href="mailto:kwlauac@gmail.com"><i class="fas fa-envelope"></i> kwlauac@gmail.com</a>
+                <a href="tel:+85296160431"><i class="fas fa-phone-alt"></i> +852 96160431</a>
+                <a href="https://www.linkedin.com/in/jason-lau-28b2b6155/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
         </div>
     </header>
 
@@ -109,7 +396,9 @@
                         <span class="tag">C / C++</span>
                         <span class="tag">Node.js</span>
                         <span class="tag">CI / CD</span>
-                        <span class="tag">AWS & GCP</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Google Cloud Platform</span>
+                        <span class="tag">Alicloud</span>
                     </div>
                 </div>
                 <div class="skill-card">
