@@ -1,508 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Lau | AI Project Manager & Senior Engineer</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Jason Lau - Senior AI & Robotics Engineer, Project Manager. Expertise in GenAI, Embedded Systems, IoT, and Healthcare Tech.">
+    <title>Jason Lau | AI & Robotics Engineer</title>
+    
+    <!-- Google Fonts: Inter for UI, Fira Code for tech accents -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-blue: #0f172a;
-            --accent-blue: #3b82f6;
-            --secondary-blue: #60a5fa;
-            --bg-light: #f8fafc;
-            --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            --text-main: #1e293b;
-            --text-light: #64748b;
-            --white: #ffffff;
-            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --bg-main: #0a0f1c; 
+            --bg-nav: rgba(10, 15, 28, 0.85);
+            --bg-card: rgba(17, 25, 40, 0.65);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-primary: #3b82f6; 
+            --accent-secondary: #06b6d4; 
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --border-color: rgba(255, 255, 255, 0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg-gradient); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
         
-        /* Header Section */
-        header { 
-            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e293b 100%); 
-            color: var(--white); 
-            padding: 6rem 2rem; 
-            text-align: center; 
-            position: relative;
-            overflow: hidden;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzI0MzU0IiBzdHJva2Utd2lkdGg9IjEiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnptMC0xOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnptMTgtMThjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6bTAtMThjMy4zMTQgMCA2LTIuNjg2IDYtNnMtMi42ODYtNi02LTYtNiAyLjY4Ni02IDYgMi42ODYgNiA2IDZ6Ii8+PC9nPjwvc3ZnPg==');
-            opacity: 0.1;
-            z-index: 1;
-        }
-        header .content {
-            position: relative;
-            z-index: 2;
-        }
-        header h1 { 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            margin-bottom: 1rem; 
-            letter-spacing: -0.5px; 
-            line-height: 1.1;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        header h2 { 
-            font-size: 1.4rem; 
-            font-weight: 300; 
-            color: #cbd5e1; 
-            margin-bottom: 2.5rem; 
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-        .contact-links { 
-            display: flex; 
-            justify-content: center; 
-            gap: 2rem; 
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-        .contact-links a { 
-            color: var(--white); 
-            text-decoration: none; 
-            font-size: 1.1rem; 
-            display: flex; 
-            align-items: center; 
-            gap: 0.75rem; 
-            transition: var(--transition);
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        .contact-links a:hover { 
-            color: var(--white);
-            background: var(--accent-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-main); 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.08), transparent 25%);
+            background-attachment: fixed;
         }
 
-        /* Container & Sections */
-        .container { 
-            max-width: 1000px; 
-            margin: -3rem auto 4rem; 
-            padding: 0 1.5rem; 
-            position: relative; 
-            z-index: 10; 
+        /* Typography */
+        h1, h2, h3, h4 { color: #ffffff; font-weight: 700; }
+        .highlight { 
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        section { 
-            background: var(--white); 
-            border-radius: 16px; 
-            padding: 3rem; 
-            margin-bottom: 2.5rem; 
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        section::before {
-            content: '';
-            position: absolute;
+        .code-font { font-family: 'Fira Code', monospace; font-size: 0.9em; color: var(--accent-secondary); }
+
+        /* Navigation */
+        nav {
+            position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--secondary-blue));
+            width: 100%;
+            background: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
         }
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h3.section-title { 
-            font-size: 1.8rem; 
-            color: var(--primary-blue); 
-            margin-bottom: 2rem; 
-            padding-bottom: 1rem; 
-            border-bottom: 2px solid #e2e8f0; 
+        .nav-logo { font-size: 1.2rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .nav-links a:hover, .nav-links a:focus { color: var(--accent-primary); outline: none; }
+
+        /* Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 6rem 0 3rem; border-bottom: 1px solid var(--border-color); }
+        section:last-child { border-bottom: none; }
+
+        /* Hero Section */
+        .hero { 
+            min-height: 100vh; 
             display: flex; 
             align-items: center; 
-            gap: 1rem;
-            font-weight: 700;
+            position: relative;
+            padding-top: 5rem;
         }
-        h3.section-title i {
-            color: var(--accent-blue);
-            font-size: 1.5rem;
+        .hero-content { max-width: 850px; z-index: 2; }
+        .hero h1 { font-size: 4.5rem; letter-spacing: -1px; margin-bottom: 0.5rem; line-height: 1.1; }
+        .hero h2 { font-size: 1.6rem; font-weight: 400; color: var(--text-muted); margin-bottom: 2rem; }
+        .hero p.story { 
+            font-size: 1.1rem; 
+            color: var(--text-muted); 
+            margin-bottom: 2.5rem; 
+            border-left: 3px solid var(--accent-primary);
+            padding-left: 1.5rem;
         }
         
-        /* Skills Grid */
-        .skills-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 2rem; 
-        }
-        .skill-card { 
-            background: var(--bg-light); 
-            padding: 2rem; 
-            border-radius: 12px; 
-            border-left: 4px solid var(--accent-blue);
-            transition: var(--transition);
-            position: relative;
-        }
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
-        }
-        .skill-card h4 { 
-            color: var(--primary-blue); 
-            margin-bottom: 1.2rem; 
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-        .tags { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 0.75rem; 
-        }
-        .tag { 
-            background: #e0e7ff; 
-            color: var(--accent-blue); 
-            font-size: 0.9rem; 
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 8px; 
             font-weight: 600; 
-            padding: 0.4rem 1rem; 
-            border-radius: 25px;
+            text-decoration: none; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.6rem;
             transition: var(--transition);
+        }
+        .btn-primary { background: var(--accent-primary); color: #fff; box-shadow: 0 0 15px var(--accent-glow); }
+        .btn-primary:hover { background: #2563eb; box-shadow: 0 0 25px var(--accent-glow); transform: translateY(-2px); }
+        .btn-outline { background: rgba(255,255,255,0.03); color: var(--text-main); border: 1px solid var(--border-color); backdrop-filter: blur(10px); }
+        .btn-outline:hover { border-color: var(--accent-primary); color: var(--accent-primary); transform: translateY(-2px); background: rgba(59, 130, 246, 0.05); }
+
+        /* Section Titles */
+        .section-title { font-size: 2.2rem; margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+        .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--border-color), transparent); margin-left: 1rem; }
+        .section-title i { color: var(--accent-primary); }
+
+        /* Glass Cards (Skills) */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .glass-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+        }
+        .glass-card h4 { font-size: 1.2rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+        .glass-card h4 i { color: var(--accent-secondary); font-size: 1.4rem; }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid var(--border-color);
+            color: var(--text-main); 
+            font-size: 0.85rem; 
+            padding: 0.4rem 1rem; 
+            border-radius: 20px;
+            transition: var(--transition);
+            cursor: default;
         }
         .tag:hover {
-            background: var(--accent-blue);
-            color: var(--white);
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-primary);
+            color: #fff;
             transform: scale(1.05);
         }
 
-        /* Experience Line */
-        .experience-item, .education-item { 
-            margin-bottom: 3rem; 
-            position: relative;
-            padding-left: 2.5rem;
+        /* Timeline (Experience & Education) */
+        .timeline { position: relative; padding-left: 2.5rem; }
+        .timeline::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary), transparent);
         }
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            bottom: -1.5rem;
-            width: 2px;
-            background: #e2e8f0;
+        .timeline-item { position: relative; margin-bottom: 4rem; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute; left: -2.9rem; top: 0.3rem; width: 16px; height: 16px;
+            border-radius: 50%; background: var(--bg-main); border: 2px solid var(--accent-primary);
+            box-shadow: 0 0 10px var(--accent-primary); z-index: 2; transition: var(--transition);
         }
-        .experience-item:last-child::before {
-            bottom: 0;
-        }
-        .experience-item:last-child { margin-bottom: 0; }
-        .experience-item::after {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0.5rem;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            border: 3px solid var(--white);
-            box-shadow: 0 0 0 2px var(--accent-blue);
-        }
-        .job-header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-start; 
-            margin-bottom: 1rem; 
-            flex-wrap: wrap; 
-            gap: 1rem;
-        }
-        .job-title { 
-            font-size: 1.3rem; 
-            font-weight: 700; 
-            color: var(--primary-blue); 
-        }
-        .job-company { 
-            font-size: 1.1rem; 
-            font-weight: 600; 
-            color: var(--accent-blue); 
-            margin-bottom: 0.75rem; 
-        }
-        .job-date { 
-            font-size: 0.95rem; 
-            color: var(--text-light); 
-            font-weight: 600; 
-            background: var(--bg-light); 
-            padding: 0.3rem 0.8rem; 
-            border-radius: 6px;
-            white-space: nowrap;
-        }
-        ul.job-tasks { 
-            margin-left: 1.5rem; 
-            color: var(--text-main);
-        }
-        ul.job-tasks li { 
-            margin-bottom: 0.75rem; 
-            padding-left: 0.75rem;
-            position: relative;
-        }
-        ul.job-tasks li::before {
-            content: '•';
-            position: absolute;
-            left: -1rem;
-            color: var(--accent-blue);
-            font-weight: bold;
-        }
+        .timeline-item:hover .timeline-dot { background: var(--accent-primary); transform: scale(1.2); }
+        .timeline-date { display: inline-block; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase; }
+        .timeline-title { font-size: 1.4rem; margin-bottom: 0.2rem; color: #fff; }
+        .timeline-company { font-size: 1.1rem; color: var(--accent-secondary); margin-bottom: 1rem; font-weight: 500; }
+        .timeline-content ul { margin-left: 1.2rem; color: var(--text-muted); }
+        .timeline-content li { margin-bottom: 0.6rem; padding-left: 0.5rem; }
+        .timeline-content li strong { color: #e2e8f0; }
+        .timeline-content li::marker { color: var(--accent-primary); }
+
+        /* Activities Grid */
+        .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .activity-item { background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 1rem 1.5rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem; transition: var(--transition); }
+        .activity-item:hover { background: rgba(59, 130, 246, 0.05); border-color: var(--accent-primary); }
+        .activity-item i { color: var(--accent-secondary); font-size: 1.2rem; }
 
         /* Footer */
-        footer { 
-            text-align: center; 
-            padding: 3rem 2rem; 
-            color: var(--text-light); 
-            font-size: 1rem;
-            background: var(--primary-blue);
-            color: #cbd5e1;
-            margin-top: 4rem;
-        }
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-        
+        footer { text-align: center; padding: 3rem 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); }
+
         /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-up { animation: fadeUp 0.8s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            header {
-                padding: 4rem 1.5rem;
-            }
-            header h1 { 
-                font-size: 2.5rem; 
-            }
-            header h2 {
-                font-size: 1.2rem;
-            }
-            .contact-links {
-                gap: 1rem;
-            }
-            .contact-links a {
-                font-size: 1rem;
-                padding: 0.5rem 1.2rem;
-            }
-            .container {
-                margin: -2rem auto 3rem;
-                padding: 0 1rem;
-            }
-            section {
-                padding: 2rem;
-                margin-bottom: 2rem;
-            }
-            h3.section-title {
-                font-size: 1.5rem;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .experience-item, .education-item {
-                padding-left: 1.5rem;
-            }
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-        }
-        
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Focus states */
-        a:focus, button:focus {
-            outline: 2px solid var(--accent-blue);
-            outline-offset: 2px;
+            .nav-links { display: none; } /* Hide links on mobile for simplicity, or implement hamburger */
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .glass-card { padding: 1.5rem; }
+            .timeline { padding-left: 1.5rem; }
+            .timeline-dot { left: -1.9rem; width: 14px; height: 14px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="content">
-            <h1>Jason LAU, Ka Wun</h1>
-            <h2>Robotics Engineer | GenAI Engineer | Senior Software & Product Engineer | Embedded System Engineer</h2>
-            <div class="contact-links">
-                <a href="mailto:kwlauac@gmail.com"><i class="fas fa-envelope"></i> kwlauac@gmail.com</a>
-                <a href="tel:+85296160431"><i class="fas fa-phone-alt"></i> +852 96160431</a>
-                <a href="https://www.linkedin.com/in/jason-lau-28b2b6155/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+    <!-- Semantic Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">JL.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        <!-- Summary Section -->
-        <section id="summary">
-            <h3 class="section-title"><i class="fas fa-user-tie"></i> Professional Summary</h3>
-            <p>A results-driven AI Project Manager and Senior Engineer with over 8 years of IT experience, including a 3+ year focus on the analysis, design, and implementation of AI solutions. Proven expertise in leading the full lifecycle of Generative AI adoption, from prototyping and requirements gathering to production launch and performance evaluation. Combines hands-on experience with various LLMs and AI frameworks with strong project management, stakeholder collaboration, and documentation skills. Eager to drive the strategic adoption of GenAI and robotics at enterprise scale.</p>
+    <main class="container">
+        
+        <!-- Hero / About Section -->
+        <section id="about" class="hero">
+            <div class="hero-content animate-up">
+                <h2 class="code-font">Hello, I'm</h2>
+                <h1>Jason LAU, Ka Wun</h1>
+                <h2><span class="highlight">AI Project Manager</span> & Senior Robotics Engineer</h2>
+                
+                <p class="story">
+                    A results-driven Senior Software Engineer with over 8 years of experience spanning the full software development lifecycle. My passion lies at the intersection of <strong>Generative AI, Healthcare Technology, and Robotics</strong>. From developing intelligent cleaning robots and leading a HK$1M 5G telemedicine robot project, to spearheading the adoption of LLMs in enterprise mHealth platforms, I thrive on building systems that think, learn, and interact with the physical world.
+                </p>
+
+                <div class="btn-group">
+                    <a href="mailto:kwlauac@gmail.com" class="btn btn-primary" aria-label="Email Jason Lau"><i class="fas fa-paper-plane"></i> kwlauac@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/jason-lau-28b2b6155/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="tel:+85296160431" class="btn btn-outline" aria-label="Call Jason Lau"><i class="fas fa-phone-alt"></i> +852 9616 0431</a>
+                </div>
+            </div>
         </section>
 
-        <!-- Core Skills Section -->
-        <section id="skills">
-            <h3 class="section-title"><i class="fas fa-laptop-code"></i> Core Skills & Experience</h3>
+        <!-- Comprehensive Skills Section -->
+        <section id="skills" class="animate-up delay-1">
+            <h3 class="section-title"><i class="fas fa-microchip"></i> Technical Arsenal</h3>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Generative AI & LLM</h4>
+                
+                <article class="glass-card">
+                    <h4><i class="fas fa-brain"></i> AI & Machine Learning</h4>
                     <div class="tags">
-                        <span class="tag">Gemini & OpenAI</span>
-                        <span class="tag">DeepSeek & Tongyi</span>
-                        <span class="tag">RAG Frameworks</span>
-                        <span class="tag">LLM Evaluation</span>
-                        <span class="tag">Model Fine-Tuning</span>
-                        <span class="tag">Prompt Engineering</span>
+                        <span class="tag">OpenAI / Gemini / Claude</span>
+                        <span class="tag">Llama / DeepSeek</span>
+                        <span class="tag">OpenCV / TensorFlow</span>
+                        <span class="tag">YOLOv3 / Darknet</span>
+                        <span class="tag">Intel OpenVINO / Edge TPU</span>
+                        <span class="tag">RAG / Prompt Engineering</span>
+                        <span class="tag">Speech Rec (Google API / DOA)</span>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <h4>Project Management</h4>
+                </article>
+
+                <article class="glass-card">
+                    <h4><i class="fas fa-robot"></i> Robotics & Hardware</h4>
                     <div class="tags">
-                        <span class="tag">Agile / JIRA</span>
-                        <span class="tag">Stakeholder Management</span>
-                        <span class="tag">Requirements Gathering</span>
-                        <span class="tag">System Integration</span>
+                        <span class="tag">ROS (Robot OS)</span>
+                        <span class="tag">AGV / SLAM / LiDAR</span>
+                        <span class="tag">NVIDIA Jetson Nano</span>
+                        <span class="tag">Raspberry Pi / STM32 / Arduino</span>
+                        <span class="tag">IoT Sensors / IMU / Odom</span>
+                        <span class="tag">PCB & Circuit Design</span>
+                        <span class="tag">Robot Arms (SCARA)</span>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <h4>Engineering & DevOps</h4>
+                </article>
+
+                <article class="glass-card">
+                    <h4><i class="fas fa-code"></i> Software & Mobile Dev</h4>
                     <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">C / C++</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">CI / CD</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">Google Cloud Platform</span>
-                        <span class="tag">Alicloud</span>
+                        <span class="tag">Python / C / C++</span>
+                        <span class="tag">JavaScript / React Native</span>
+                        <span class="tag">Node.js / SQL / SQLite</span>
+                        <span class="tag">QT / XML / JSON</span>
+                        <span class="tag">Android Studio / Xcode</span>
+                        <span class="tag">MATLAB / Shell Script</span>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <h4>AI & Robotics</h4>
+                </article>
+
+                <article class="glass-card">
+                    <h4><i class="fas fa-network-wired"></i> Protocols & Networking</h4>
                     <div class="tags">
-                        <span class="tag">IoT Integration</span>
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">Embedded Systems</span>
-                        <span class="tag">Multi-modal AI</span>
+                        <span class="tag">TCP/IP / RESTful / Flask</span>
+                        <span class="tag">5G Data Transmission</span>
+                        <span class="tag">RTSP / WebRTC / WebSocket</span>
+                        <span class="tag">UART / RS232 / RS485</span>
+                        <span class="tag">CAN bus / I2C / SPI</span>
+                        <span class="tag">SNMP / Cisco / Fortinet</span>
                     </div>
-                </div>
+                </article>
+
+                <article class="glass-card">
+                    <h4><i class="fas fa-server"></i> DevOps & OS</h4>
+                    <div class="tags">
+                        <span class="tag">Linux / Unix / Windows / MacOS</span>
+                        <span class="tag">Docker / VMware / Hyper-V</span>
+                        <span class="tag">Git / GitHub / GitLab / SVN</span>
+                        <span class="tag">CI/CD Pipeline Management</span>
+                        <span class="tag">AWS / GCP / AliCloud</span>
+                        <span class="tag">Agile / JIRA / mantisBT</span>
+                    </div>
+                </article>
+
+                <article class="glass-card">
+                    <h4><i class="fas fa-video"></i> Media & Video Streaming</h4>
+                    <div class="tags">
+                        <span class="tag">FFmpeg / GStreamer</span>
+                        <span class="tag">H.264 / HEVC (H.265)</span>
+                        <span class="tag">4K / PTZ Camera Apps</span>
+                        <span class="tag">Webm / VP9 / m3u8</span>
+                        <span class="tag">Zoom / MS Teams Integration</span>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <!-- Working Experience Section -->
-        <section id="experience">
-            <h3 class="section-title"><i class="fas fa-briefcase"></i> Working Experience</h3>
-            
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Senior Software and Product Engineer</div>
-                        <div class="job-company">Healfie Technology Limited</div>
+        <!-- Work Experience Timeline -->
+        <section id="experience" class="animate-up delay-2">
+            <h3 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+            <div class="timeline">
+                
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2023.08 – Present</div>
+                    <h4 class="timeline-title">Senior Software and Product Engineer</h4>
+                    <div class="timeline-company">Healfie Technology Limited</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>mHealth & GenAI Leadership:</strong> Spearhead the development of the Healfie app, integrating AI-driven healthcare assistants (LLMs) to provide personalized health recommendations and risk forecasting.</li>
+                            <li><strong>Robotics in Healthcare:</strong> Investigate multi-modal AI and robotics integration within the Healfie framework to facilitate eye examinations (Amsler Grid, visual acuity) in clinical and home settings.</li>
+                            <li><strong>Cloud & Architecture:</strong> Oversee cloud-based systems integrating health data from diverse sources, ensuring seamless data storage and processing for comprehensive user monitoring.</li>
+                            <li><strong>Team Management:</strong> Supervise engineers and interns, providing mentorship, driving R&D, and maintaining IT governance.</li>
+                        </ul>
                     </div>
-                    <div class="job-date">2023.08 – Present</div>
-                </div>
-                <ul class="job-tasks">
-                    <li><strong>GenAI Project Management:</strong> Acted as project lead for integrating GenAI/LLM applications into the platform (Live AI Healthcare Assistant), managing scope, timelines, and quality.</li>
-                    <li><strong>LLM Evaluation:</strong> Evaluated Gemini, Tongyi, and other models to identify best fits for AI Assistants and personalized recommendations.</li>
-                    <li><strong>Team Leadership:</strong> Supervise engineers & interns, providing mentorship, conducting R&D, and driving IT governance.</li>
-                    <li><strong>Innovation:</strong> Investigated multi-modal AI robotics integration and rapidly prototyped a RAG-based Cultural Tourism Chatbot using Flowise.</li>
-                </ul>
-            </div>
+                </article>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Senior Software Engineer</div>
-                        <div class="job-company">Roborn Technology Limited</div>
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2020.07 – 2022.08</div>
+                    <h4 class="timeline-title">Senior Software Engineer</h4>
+                    <div class="timeline-company">Roborn Technology Limited</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>Telemedicine Robot (HK$ 1M Project):</strong> Led an engineering team in the R&D and successful delivery of a 5G Telemedicine Robot, featuring video conferencing, 4K camera apps, and fast data transfer.</li>
+                            <li><strong>Computer Vision & AI:</strong> Developed robotic applications utilizing image processing and object detection (pose, facial, gesture, and QR code recognition).</li>
+                            <li><strong>IoT & Hardware Integration:</strong> Integrated automation for IoT devices, including motor/camera control, Bluetooth, MCU technologies, and Sound Direction of Arrival (DOA) via Google Cloud API.</li>
+                            <li><strong>Project Lifecycle:</strong> Conducted feasibility studies, PCB/circuit design, troubleshooting, and managed marketing exhibitions for company products.</li>
+                        </ul>
                     </div>
-                    <div class="job-date">2020.07 – 2022.08</div>
-                </div>
-                <ul class="job-tasks">
-                    <li><strong>AI Leadership:</strong> Led an engineering team in the R&D of AI solutions for telemedicine/robotics, successfully delivering a <strong>HK$ 1 million Telemedicine Robot project</strong>.</li>
-                    <li><strong>System Architecture:</strong> Performed system analysis and designed high-availability AI architecture, managing complex IoT integrations.</li>
-                </ul>
-            </div>
+                </article>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Software Engineer</div>
-                        <div class="job-company">Asia Vision Technology Limited</div>
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2019.01 – 2020.07</div>
+                    <h4 class="timeline-title">Software Engineer</h4>
+                    <div class="timeline-company">Asia Vision Technology Limited</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>Computer Vision R&D:</strong> Engaged in the research and development of cutting-edge image recognition technologies and AI-driven applications.</li>
+                            <li><strong>System Analysis:</strong> Conducted problem diagnosis, proposed IT solutions for industry applications, and executed rigorous program testing.</li>
+                        </ul>
                     </div>
-                    <div class="job-date">2019.01 – 2020.07</div>
-                </div>
-                <ul class="job-tasks">
-                    <li>R&D for Image Recognition Systems and AI-driven applications. Conducted problem diagnosis, troubleshooting, and implemented industry IT solutions.</li>
-                </ul>
-            </div>
+                </article>
 
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Software Engineer</div>
-                        <div class="job-company">iLife Innovation Limited</div>
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2017.09 – 2019.01</div>
+                    <h4 class="timeline-title">Software Engineer</h4>
+                    <div class="timeline-company">iLife Innovation Limited</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li><strong>Intelligent Cleaning Robots:</strong> Developed full-lifecycle software for robotics, focusing on IoT applications, motion sensing control systems, and hardware troubleshooting.</li>
+                        </ul>
                     </div>
-                    <div class="job-date">2017.09 – 2019.01</div>
-                </div>
-                <ul class="job-tasks">
-                    <li>Developed Intelligent Cleaning Robots focusing on IoT, motion sensing control systems, and full lifecycle software R&D.</li>
-                </ul>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2014.01 – 2014.04</div>
+                    <h4 class="timeline-title">Engineering Trainee</h4>
+                    <div class="timeline-company">MTR Corporation Limited</div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>Developed a "360-Degree Photo App" on the Android platform integrated with voice control functionality.</li>
+                        </ul>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education & Activities -->
         <section id="education">
-            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Certifications</h3>
+            <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Activities</h3>
             
-            <div class="education-item">
-                <div class="job-title">Certificate in Generative AI Tools for the Workplace</div>
-                <div class="job-company">The Education University of Hong Kong (EdUHK) | 2025</div>
-                <ul class="job-tasks">
-                    <li>Completed 30-hour programme covering: LLMs, Prompt Engineering, Chatbot Development (Hugging Face).</li>
-                </ul>
+            <div class="timeline" style="margin-bottom: 3rem;">
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2025</div>
+                    <h4 class="timeline-title">Certificate in Generative AI Tools for the Workplace</h4>
+                    <div class="timeline-company">The Education University of Hong Kong (EdUHK)</div>
+                    <div class="timeline-content">
+                        <ul><li>30-hour programme: LLMs, Prompt Engineering, Chatbot Development (Hugging Face).</li></ul>
+                    </div>
+                </article>
+                
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date code-font">2014 - 2017</div>
+                    <h4 class="timeline-title">BEng in Electronic Engineering</h4>
+                    <div class="timeline-company">Hong Kong University of Science and Technology (HKUST)</div>
+                    <div class="timeline-content">
+                        <ul><li>Final Year Project: Indoor Autonomous Car.</li></ul>
+                    </div>
+                </article>
             </div>
 
-            <div class="education-item">
-                <div class="job-title">BEng in Electronic Engineering</div>
-                <div class="job-company">Hong Kong University of Science and Technology (HKUST) | 2014 - 2017</div>
-            </div>
-
-            <div class="education-item">
-                <div class="job-title">Awards & Visas</div>
-                <ul class="job-tasks" style="margin-top: 0.5rem;">
-                    <li>Innovation & Technology Fund Research Talent via Cyberport Incubation Programme (2020-2022, 2024-2025)</li>
-                    <li>UK High Potential Individual Visa (2022)</li>
-                </ul>
+            <h4 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--accent-secondary);">Exhibitions, Awards & Interests</h4>
+            <div class="activities-grid">
+                <div class="activity-item">
+                    <i class="fas fa-passport"></i>
+                    <span>UK High Potential Individual Visa (2022)</span>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-award"></i>
+                    <span>ITF Research Talent (2020-2022, 2024-2025)</span>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-globe-asia"></i>
+                    <span>Asia Summit on Global Health (ASGH) 2024</span>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-robot"></i>
+                    <span>Gerontech & Innovation Expo (GIES) 2021, 2023</span>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-brain"></i>
+                    <span>Interests: Brain-Computer Interface (BCI), EEG</span>
+                </div>
+                <div class="activity-item">
+                    <i class="fas fa-car-side"></i>
+                    <span>HKUST Robot Design Contest (2014)</span>
+                </div>
             </div>
         </section>
-    </div>
+
+    </main>
 
     <footer>
-        <p>&copy; 2026 Jason Lau. Built with HTML & CSS for GitHub Pages.</p>
+        <div class="container">
+            <p>&copy; 2026 Jason Lau. Engineered with precision.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--border-color);">HTML5 • CSS3 • Glassmorphism</p>
+        </div>
     </footer>
 
 </body>
